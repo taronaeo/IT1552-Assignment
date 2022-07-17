@@ -1,11 +1,10 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 20em 1fr;
-  grid-template-rows: 50px 1fr 50px;
+  grid-template-columns: 15em 1fr;
+  grid-template-rows: 6em 1fr;
   grid-template-areas:
     'sidenav header'
-    'sidenav main'
-    'sidenav footer';
+    'sidenav main';
   height: 100vh;
 }
 
@@ -14,27 +13,9 @@
 }
 
 .sidenav {
-  display: flex;
-  flex-direction: column;
   grid-area: sidenav;
-}
-
-.sidenav-list {
-  padding: 10px;
-  margin-top: 85px;
-  list-style-type: none;
-}
-
-.sidenav-list-item {
-  @apply hover:rounded-lg hover:bg-red-500/60;
-  cursor: pointer;
-  padding: 20px;
 }
 
 .main {
   grid-area: main;
-}
-
-.footer {
-  grid-area: footer;
 }
