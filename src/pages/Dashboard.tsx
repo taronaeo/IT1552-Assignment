@@ -5,9 +5,9 @@ import { signOut } from '../services';
 const Dashboard: React.FC = () => {
   return (
     <div>
-      <h1>congratz!</h1>
+      <h1 className="font-bold">congratz!</h1>
 
-      <button onClick={signOut}>sign out now bitch</button>
+      <button onClick={signOut}>sign out now</button>
     </div>
   );
 };
