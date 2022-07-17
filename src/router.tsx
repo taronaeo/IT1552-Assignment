@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import App from './App';
+import { Dashboard } from './pages/Dashboard';
 
 const Router: React.FC = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<Dashboard />} />
       <Route path="/manage/users" element={null} />
       <Route path="/manage/members" element={null} />
       <Route path="/manage/events" element={null} />
