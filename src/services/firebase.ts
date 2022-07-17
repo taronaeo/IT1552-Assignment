@@ -1,19 +1,9 @@
 import { initializeApp, getApps } from 'firebase/app';
-import {
-  Auth,
-  getAuth,
-  connectAuthEmulator,
-  onAuthStateChanged,
-} from 'firebase/auth';
-
+import { Auth, getAuth, connectAuthEmulator } from 'firebase/auth';
 import {
   Firestore,
   getFirestore,
   connectFirestoreEmulator,
-  collection,
-  query,
-  orderBy,
-  onSnapshot,
 } from 'firebase/firestore';
 
 import {
@@ -21,6 +11,9 @@ import {
   getFunctions,
   connectFunctionsEmulator,
 } from 'firebase/functions';
+
+// State check to prevent emulator errors
+let isEmulatorInitialized = false;
 
 type ConnectToEmulators = {
   auth: Auth;
@@ -54,7 +47,9 @@ function connectToEmulators({
   functions,
 }: ConnectToEmulators) {
   if (location.hostname === 'localhost') {
-    connectAuthEmulator(auth, 'http://localhost:9099');
+    connectAuthEmulator(auth, 'http://localhost:9099', {
+      disableWarnings: true,
+    });
     connectFirestoreEmulator(firestore, 'localhost', 8080);
     connectFunctionsEmulator(functions, 'localhost', 5001);
   }
@@ -63,30 +58,9 @@ function connectToEmulators({
 export function getFirebase() {
   const services = init();
 
-  if (services.isConfigured) {
+  if (services.isConfigured && !isEmulatorInitialized) {
     connectToEmulators(services);
+    isEmulatorInitialized = true;
   }
   return services;
-}
-
-export function onAuth(callback: Function) {
-  const { auth } = getFirebase();
-  return onAuthStateChanged(auth, (user) => {
-    console.log(user);
-    callback(user);
-  });
-}
-
-export function streamUsers() {
-  const { firestore } = getFirebase();
-  const usersCol = collection(firestore, 'users');
-  const usersQuery = query(usersCol, orderBy('createdAt'));
-
-  const stream = (callback: Function) =>
-    onSnapshot(usersQuery, (snapshot) => {
-      const messages = snapshot.docs.map((doc) => doc.data());
-      callback(messages);
-    });
-
-  return { stream };
 }

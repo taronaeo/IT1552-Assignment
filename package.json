@@ -4,16 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently yarn:firebase vite",
+    "dev": "concurrently -k yarn:firebase vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "firebase": "firebase emulators:start --only auth,firestore --import=./offline.seed --export-on-exit --project it1552-assignment"
+    "firebase": "firebase emulators:start --only auth,firestore,functions --import=./offline.seed --export-on-exit --project it1552-assignment"
   },
   "dependencies": {
     "firebase": "^9.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
