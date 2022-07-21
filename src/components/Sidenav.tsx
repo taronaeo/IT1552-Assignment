@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faHome,
@@ -11,68 +12,84 @@ import {
   faArrowRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 
+import { signOut } from '../services';
+
 type SidenavProps = {
   className: string;
 };
 
-const Sidenav: React.FC<SidenavProps> = (props) => (
-  <aside {...props}>
-    <div className="px-6 mt-8 mb-4">
-      <ul>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon icon={faHome} className="w-4 mr-4" />
+const Sidenav: React.FC<SidenavProps> = (props) => {
+  return (
+    <aside {...props}>
+      <div className="flex flex-col gap-2 px-6 mt-8">
+        <Link
+          to="/"
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faHome} className="w-5" />
           Dashboard
-        </li>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon icon={faIdBadge} className="w-4 mr-4" />
+        </Link>
+
+        <Link
+          to="/profile"
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faIdBadge} className="w-5" />
           Profile
-        </li>
-      </ul>
+        </Link>
 
-      <hr className="my-5 border-1 border-slate-700" />
+        <hr className="my-2 border-1-border-slate-700" />
+        <span className="text-xs text-slate-400 font-bold uppercase">
+          Manage
+        </span>
 
-      <span className="text-sm text-slate-400 font-bold uppercase">Manage</span>
-
-      <ul>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon icon={faUser} className="w-4 mr-4" />
+        <Link
+          to="/manage/users"
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faUser} className="w-5" />
           Users
-        </li>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon icon={faUserGroup} className="w-4 mr-4" />
+        </Link>
+
+        <Link
+          to="/manage/members"
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faUserGroup} className="w-5" />
           Members
-        </li>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon icon={faCalendarDays} className="w-4 mr-4" />
+        </Link>
+
+        <Link
+          to="/manage/events"
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faCalendarDays} className="w-5" />
           Events
-        </li>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon icon={faClock} className="w-4 mr-4" />
-          Participations
-        </li>
-      </ul>
+        </Link>
 
-      <hr className="my-5 border-1 border-slate-700" />
+        <Link
+          to="/manage/participation"
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faClock} className="w-5" />
+          Participation
+        </Link>
 
-      <span className="text-sm text-slate-400 font-bold uppercase">
-        Session
-      </span>
+        <hr className="my-2 border-1-border-slate-700" />
+        <span className="text-xs text-slate-400 font-bold uppercase">
+          Session
+        </span>
 
-      <ul>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon icon={faGear} className="w-4 mr-4" />
+        <Link
+          to="/settings"
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faGear} className="w-5" />
           Settings
-        </li>
-        <li className="px-4 py-4 hover:rounded-lg hover:bg-sky-600/25">
-          <FontAwesomeIcon
-            icon={faArrowRightFromBracket}
-            className="w-4 mr-4"
-          />
+        </Link>
+
+        <button
+          onClick={signOut}
+          className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
+          <FontAwesomeIcon icon={faArrowRightFromBracket} className="w-5" />
           Sign Out
-        </li>
-      </ul>
-    </div>
-  </aside>
-);
+        </button>
+      </div>
+    </aside>
+  );
+};
 
 export { Sidenav };

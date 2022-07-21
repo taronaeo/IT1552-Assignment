@@ -10,11 +10,11 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="grid-container">
-      <Header className="pt-8 header" />
-      <Sidenav className="flex flex-col sidenav" />
+    <div className="min-w-full min-h-full grid-container">
+      <Header className="w-full h-full pt-8 header" />
+      <Sidenav className="w-full h-full flex flex-col sidenav" />
 
-      <main className="main">{children}</main>
+      <main className="w-full h-full main">{children}</main>
     </div>
   );
 };

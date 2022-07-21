@@ -5,7 +5,6 @@
   grid-template-areas:
     'sidenav header'
     'sidenav main';
-  height: 100vh;
 }
 
 .header {
