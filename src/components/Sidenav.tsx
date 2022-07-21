@@ -63,10 +63,10 @@ const Sidenav: React.FC<SidenavProps> = (props) => {
         </Link>
 
         <Link
-          to="/manage/participation"
+          to="/manage/participations"
           className="w-full flex flex-row items-center gap-4 p-3 hover:rounded-lg hover:bg-sky-600/25">
           <FontAwesomeIcon icon={faClock} className="w-5" />
-          Participation
+          Participations
         </Link>
 
         <hr className="my-2 border-1-border-slate-700" />

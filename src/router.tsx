@@ -6,7 +6,13 @@ import { useAuthState } from './stores/auth';
 
 import { Layout } from './components/Layout';
 import { AuthGuard } from './guards/AuthGuard';
-import { Dashboard } from './pages/Dashboard';
+import {
+  Dashboard,
+  ManageUsers,
+  ManageMembers,
+  ManageEvents,
+  ManageParticipations,
+} from './pages';
 
 const Router: React.FC = () => {
   const setAuthState = useAuthState((state) => state.setUser);
@@ -26,10 +32,13 @@ const Router: React.FC = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<AuthGuard Page={Dashboard} />} />
-          <Route path="/manage/users" element={null} />
-          <Route path="/manage/members" element={null} />
-          <Route path="/manage/events" element={null} />
-          <Route path="/manage/participations" element={null} />
+          <Route path="/manage/users" element={<ManageUsers />} />
+          <Route path="/manage/members" element={<ManageMembers />} />
+          <Route path="/manage/events" element={<ManageEvents />} />
+          <Route
+            path="/manage/participations"
+            element={<ManageParticipations />}
+          />
 
           <Route path="/manage/users/:id" element={null} />
           <Route path="/manage/users/:id/edit" element={null} />
