@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { onAuth } from './services';
 import { useAuthState } from './stores/auth';
 
-import { Layout } from './components/Layout';
+import { Layout } from './layout';
 import { AuthGuard } from './guards/AuthGuard';
 import {
   Dashboard,
