@@ -7,7 +7,7 @@ import {
   faClock,
 } from '@fortawesome/free-solid-svg-icons';
 
-import { Heading } from '../components/Heading';
+import { Heading, Title } from '../components';
 
 const Dashboard: React.FC = () => {
   return (
@@ -32,7 +32,7 @@ const Dashboard: React.FC = () => {
         </div>
       </div> */}
 
-      <Heading>Dashboard</Heading>
+      <Title>Dashboard</Title>
 
       <div className="grid grid-cols-4 gap-4">
         <div className="flex flex-row items-center gap-4 p-4 text-black bg-white rounded-xl">
@@ -67,6 +67,8 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <Heading>Your Profile</Heading>
     </div>
   );
 };
