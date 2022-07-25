@@ -12,9 +12,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="grid-container">
       <Header className="w-full h-full pt-8 header" />
-      <Sidenav className="w-full h-full flex flex-col sidenav" />
+      <Sidenav className="w-full h-full sidenav border-r border-slate-800" />
 
-      <main className="w-full h-full main">{children}</main>
+      <main className="w-full h-full main px-10">{children}</main>
     </div>
   );
 };
