@@ -1,9 +1,9 @@
 import React from 'react';
 
-const UpcomingEvents: React.FC = () => (
+const RecentEvents: React.FC = () => (
   <div className="relative rounded-xl overflow-x-auto">
     <table className="w-full text-sm text-left text-white">
-      <thead className="text-xs uppercase text-gray-500 bg-gray-700">
+      <thead className="text-xs uppercase text-slate-700 bg-gray-50">
         <tr>
           <th scope="col" className="px-6 py-3">
             Event Code
@@ -21,10 +21,10 @@ const UpcomingEvents: React.FC = () => (
       </thead>
 
       <tbody>
-        <tr className="border-b text-gray-700 bg-white">
+        <tr className="border-b hover:bg-sky-600/25">
           <th
             scope="row"
-            className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+            className="px-6 py-4 font-medium text-white whitespace-nowrap">
             20191211
           </th>
           <td className="px-6 py-4">Discord Games Night</td>
@@ -55,4 +55,4 @@ const UpcomingEvents: React.FC = () => (
   </div>
 );
 
-export { UpcomingEvents };
+export { RecentEvents };

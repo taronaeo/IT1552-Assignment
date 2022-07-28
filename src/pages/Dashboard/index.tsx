@@ -7,11 +7,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Title, Heading, WidgetCard } from '../../components';
+import { RecentEvents } from './RecentEvents';
 import { UpcomingEvents } from './UpcomingEvents';
 
 const Dashboard: React.FC = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 mb-10">
       {/* <div className="w-full max-w-7xl flex flex-col">
         <div className="flex justify-between items-center">
           <h1 className="flex gap-4 items-center text-4xl font-medium">
@@ -71,8 +72,10 @@ const Dashboard: React.FC = () => {
       </div>
 
       <Heading>Upcoming Events</Heading>
-
       <UpcomingEvents />
+
+      <Heading>Recent Events</Heading>
+      <RecentEvents />
     </div>
   );
 };
