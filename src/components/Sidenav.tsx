@@ -20,7 +20,7 @@ type SidenavProps = {
 
 const Sidenav: React.FC<SidenavProps> = (props) => {
   return (
-    <aside {...props}>
+    <nav {...props}>
       <div className="flex flex-col gap-2 px-6 mt-8">
         <Link
           to="/"
@@ -88,7 +88,7 @@ const Sidenav: React.FC<SidenavProps> = (props) => {
           Sign Out
         </button>
       </div>
-    </aside>
+    </nav>
   );
 };
 
