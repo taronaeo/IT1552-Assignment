@@ -4,14 +4,14 @@ import { useAuthState } from '../stores/auth';
 import { Login } from '../pages/Login';
 
 type AuthGuard = {
-  Page: React.FC;
+  children: JSX.Element;
 };
 
-const AuthGuard: React.FC<AuthGuard> = ({ Page }) => {
+const AuthGuard: React.FC<AuthGuard> = ({ children }) => {
   const auth = useAuthState((state) => state.user);
 
   if (auth === null) return <Login />;
-  return <Page />;
+  return children;
 };
 
 export { AuthGuard };

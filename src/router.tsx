@@ -8,6 +8,7 @@ import { Layout } from './layout';
 import { AuthGuard } from './guards/AuthGuard';
 import {
   Dashboard,
+  Profile,
   ManageUsers,
   ManageMembers,
   ManageEvents,
@@ -28,29 +29,32 @@ const Router: React.FC = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<AuthGuard Page={Dashboard} />} />
-          <Route path="/manage/users" element={<ManageUsers />} />
-          <Route path="/manage/members" element={<ManageMembers />} />
-          <Route path="/manage/events" element={<ManageEvents />} />
-          <Route
-            path="/manage/participations"
-            element={<ManageParticipations />}
-          />
+    <AuthGuard>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/manage/users" element={<ManageUsers />} />
+            <Route path="/manage/members" element={<ManageMembers />} />
+            <Route path="/manage/events" element={<ManageEvents />} />
+            <Route
+              path="/manage/participations"
+              element={<ManageParticipations />}
+            />
 
-          <Route path="/manage/users/:id" element={null} />
-          <Route path="/manage/users/:id/edit" element={null} />
-          <Route path="/manage/members/:id" element={null} />
-          <Route path="/manage/members/:id/edit" element={null} />
-          <Route path="/manage/events/:id" element={null} />
-          <Route path="/manage/events/:id/edit" element={null} />
-          <Route path="/manage/participations/:id" element={null} />
-          <Route path="/manage/participations/:id/edit" element={null} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+            <Route path="/manage/users/:id" element={null} />
+            <Route path="/manage/users/:id/edit" element={null} />
+            <Route path="/manage/members/:id" element={null} />
+            <Route path="/manage/members/:id/edit" element={null} />
+            <Route path="/manage/events/:id" element={null} />
+            <Route path="/manage/events/:id/edit" element={null} />
+            <Route path="/manage/participations/:id" element={null} />
+            <Route path="/manage/participations/:id/edit" element={null} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </AuthGuard>
   );
 };
 
