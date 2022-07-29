@@ -7,8 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { Title, Heading, WidgetCard } from '../../components';
-import { RecentEvents } from './RecentEvents';
-import { UpcomingEvents } from './UpcomingEvents';
+import { RecentEvents, UpcomingEvents } from '.';
 
 const Dashboard: React.FC = () => {
   return (
@@ -35,31 +34,31 @@ const Dashboard: React.FC = () => {
 
       <Title>Dashboard</Title>
 
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 mb-4">
         <WidgetCard icon={faUser}>
-          <div>100</div>
+          <span>100</span>
           <div className="font-bold">users</div>
         </WidgetCard>
 
         <WidgetCard icon={faUsers}>
-          <div>100</div>
+          <span>100</span>
           <div className="font-bold">members</div>
         </WidgetCard>
 
         <WidgetCard icon={faCalendarDays}>
-          <div>100</div>
+          <span>100</span>
           <div className="font-bold">events</div>
         </WidgetCard>
 
         <WidgetCard icon={faClock}>
-          <div>100</div>
+          <span>100</span>
           <div className="font-bold">participations</div>
         </WidgetCard>
       </div>
 
       <Heading>Your Statistics</Heading>
 
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 mb-4">
         <WidgetCard icon={faCalendarDays}>
           <div className="font-bold uppercase">Events Completed</div>
           <div>5 events</div>
@@ -72,10 +71,14 @@ const Dashboard: React.FC = () => {
       </div>
 
       <Heading>Upcoming Events</Heading>
-      <UpcomingEvents />
+      <div className="mb-4">
+        <UpcomingEvents />
+      </div>
 
       <Heading>Recent Events</Heading>
-      <RecentEvents />
+      <div className="mb-4">
+        <RecentEvents />
+      </div>
     </div>
   );
 };

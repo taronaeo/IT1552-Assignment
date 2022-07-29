@@ -29,7 +29,7 @@ const UpcomingEvents: React.FC = () => (
           </th>
           <td className="px-6 py-4">Discord Games Night</td>
           <td className="px-6 py-4">Andre Goh Song Jun</td>
-          <td className="px-6 py-4">View</td>
+          <td className="px-6 py-4 text-blue-400">View</td>
         </tr>
 
         <tr className="border-b hover:bg-sky-600/25">
@@ -40,7 +40,7 @@ const UpcomingEvents: React.FC = () => (
           </th>
           <td className="px-6 py-4">Discord Games Night</td>
           <td className="px-6 py-4">Andre Goh Song Jun</td>
-          <td className="px-6 py-4">View</td>
+          <td className="px-6 py-4 text-blue-400">View</td>
         </tr>
 
         <tr className="border-b hover:bg-sky-600/25">
