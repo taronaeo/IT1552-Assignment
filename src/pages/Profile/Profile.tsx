@@ -8,7 +8,7 @@ const Profile: React.FC = () => (
 
     <Heading>Personal Information</Heading>
 
-    <div className="grid grid-cols-2 grid-flow-row gap-4">
+    <div className="grid grid-cols-2 grid-flow-row gap-4 mb-4">
       <div>
         <span className="text-sm">Membership ID</span>
         <div className="font-bold">yzpfkGl1uRvDc1WqIlrz</div>
@@ -57,9 +57,11 @@ const Profile: React.FC = () => (
       </div>
     </div>
 
+    <hr />
+
     <Heading>Emergency Contact Details</Heading>
 
-    <div className="grid grid-cols-2 grid-flow-row gap-4">
+    <div className="grid grid-cols-2 grid-flow-row gap-4 mb-4">
       <div>
         <span className="text-sm">Name of Next-of-Kin</span>
         <div className="font-bold">Stanley Teo</div>
