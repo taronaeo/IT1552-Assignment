@@ -31,9 +31,7 @@ const Dashboard: React.FC = () => {
           </button>
         </div>
       </div> */}
-
       <Title>Dashboard</Title>
-
       <div className="grid grid-cols-4 gap-4 mb-4">
         <WidgetCard icon={faUser}>
           <span>100</span>
@@ -55,9 +53,7 @@ const Dashboard: React.FC = () => {
           <div className="font-bold">participations</div>
         </WidgetCard>
       </div>
-
       <Heading>Your Statistics</Heading>
-
       <div className="grid grid-cols-2 gap-4 mb-4">
         <WidgetCard icon={faCalendarDays}>
           <div className="font-bold uppercase">Events Completed</div>
@@ -69,16 +65,15 @@ const Dashboard: React.FC = () => {
           <div>25.5 hours</div>
         </WidgetCard>
       </div>
-
       <Heading>Upcoming Events</Heading>
       <div className="mb-4">
         <UpcomingEvents />
       </div>
-
       <Heading>Recent Events</Heading>
       <div className="mb-4">
         <RecentEvents />
       </div>
+      &copy; Copyright 2022, Aaron Teo. All rights reserved.
     </div>
   );
 };
