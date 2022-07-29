@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RecentEvents: React.FC = () => (
   <div className="relative rounded-xl overflow-x-auto">
@@ -29,7 +30,11 @@ const RecentEvents: React.FC = () => (
           </th>
           <td className="px-6 py-4">Discord Games Night</td>
           <td className="px-6 py-4">Andre Goh Song Jun</td>
-          <td className="px-6 py-4 text-blue-400">View</td>
+          <td className="px-6 py-4">
+            <Link to="/manage/events/20191211" className="text-blue-400">
+              View
+            </Link>
+          </td>
         </tr>
 
         <tr className="border-b hover:bg-sky-600/25">
@@ -40,7 +45,11 @@ const RecentEvents: React.FC = () => (
           </th>
           <td className="px-6 py-4">Discord Games Night</td>
           <td className="px-6 py-4">Andre Goh Song Jun</td>
-          <td className="px-6 py-4 text-blue-400">View</td>
+          <td className="px-6 py-4 text-blue-400">
+            <Link to="/manage/events/20191211" className="text-blue-400">
+              View
+            </Link>
+          </td>
         </tr>
 
         <tr className="border-b hover:bg-sky-600/25">
