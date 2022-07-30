@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 import { Search } from '../../components';
 import { UsersTable } from '.';
@@ -11,10 +9,12 @@ const ManageUsers: React.FC = () => {
       <h1 className="text-4xl font-bold">Manage Users</h1>
 
       <div className="flex flex-row justify-between items-center">
-        <div>
-          <button className="flex flex-row items-center gap-2 text-black bg-white border border-gray-300 font-medium rounded-lg text-sm p-2 px-4">
-            Add User
-            <FontAwesomeIcon icon={faChevronRight} className="w-5" />
+        <div className="inline-flex rounded-md" role="group">
+          <button className="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-l-lg border border-gray-200">
+            Suspend User
+          </button>
+          <button className="px-4 py-2 text-sm font-medium text-gray-900 bg-white rounded-r-lg border border-gray-200">
+            Delete User
           </button>
         </div>
 
